@@ -59,7 +59,7 @@ def main(argv=None):
       os.environ["XLA_FLAGS"] = "--xla_force_host_platform_device_count=8"
       
       # Try Metal backend first
-      backends_to_try = ["metal", "cpu"]
+      backends_to_try = ["cudnn","metal", "cpu"]
       for backend in backends_to_try:
           try:
               print(f"Attempting to initialize JAX with {backend} backend...")
